@@ -1,8 +1,5 @@
 <template>
   <div id="app">
-		<div class="box footer">
-		<div class="box-content">Footer</div>
-		</div>
     
     <router-view/>
 	
@@ -28,12 +25,6 @@ export default({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-
-.footer{
-	grid-column: 1/4;
-	grid-row: 3/4;
 }
 
 #nav {

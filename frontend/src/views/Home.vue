@@ -6,17 +6,22 @@
   <div class="grid-products">
   <ProductsListed />
   </div>
+  <div class="grid-footer">
+	<Footer />
+  </div>
   </section>
 </template>
 
 <script>
 import Header from '@/components/Landing/Header.vue'
 import ProductsListed from '@/components/Landing/ProductsListed.vue'
+import Footer from '@/components/Landing/Footer.vue'
 
 export default {
   components: {
 	Header,
 	ProductsListed,
+	Footer,
   }
 }
 </script>
@@ -42,5 +47,10 @@ export default {
 .grid-products{
 	grid-row: 2/3;
 	grid-column: 1/4;
+}
+
+.grid-footer{
+	grid-column: 1/4;
+	grid-row: 3/4;
 }
 </style>
