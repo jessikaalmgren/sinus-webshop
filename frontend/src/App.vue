@@ -1,18 +1,6 @@
 <template>
   <div id="app">
 	<section class="grid">
-		<div class="box header">
-			<div class="box-content">
-				<div id="nav">
-					<img class="logo" src="@/assets/sinus-logo.svg" alt="Image no loading">
-					<div class="flexend">
-      <router-link to="/">Produkter</router-link> 
-      <router-link to="/about">Mitt konto</router-link>
-<img src="@/assets/icon-bag-white.svg" alt="Image no loading" class="icon">
-</div>
-    </div>
-			</div>
-		</div>
 		<div class="box products">
 			<div class="box-content">Produkter
 				<div class="products-grid">
@@ -33,6 +21,18 @@
   </div>
 </template>
 
+<script>
+
+
+export default({
+	components: {
+		
+	}
+
+})
+</script>
+
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -51,15 +51,12 @@
 
 }
 
+
 .box{
 	background-color: grey;
 }
 
-.header{
-	grid-column: 1/4;
-	grid-row: 1/2;
-	
-}
+
 
 .products{
 	grid-row: 2/3;
@@ -69,19 +66,6 @@
 .footer{
 	grid-column: 1/4;
 	grid-row: 3/4;
-}
-
-.logo{
-	width: 10em;
-	
-}
-
-.flexend{ 
-	margin-top: 0.3em;
-}
-
-.icon{
-	margin-left: 3em;
 }
 
 .products-grid{
