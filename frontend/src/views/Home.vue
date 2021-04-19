@@ -17,12 +17,24 @@ import Header from '@/components/Landing/Header.vue'
 import ProductsListed from '@/components/Landing/ProductsListed.vue'
 import Footer from '@/components/Landing/Footer.vue'
 
+
 export default {
+	created() {
+    return this.$store.dispatch("getProducts");
+  },
   components: {
 	Header,
 	ProductsListed,
 	Footer,
-  }
+  },
+  
+  methods: {
+	
+	
+  },
+  computed: {
+	
+  },
 }
 </script>
 
