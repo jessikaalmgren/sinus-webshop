@@ -7,7 +7,7 @@
     v-bind:img="prod.imgFile" >
 					<h2>{{prod.title}}</h2>
 					<p>{{prod.shortDesc}}</p>
-					<img :src="require('@/assets/' + prod.imgFile)" alt="">
+					<img :src="require('@/assets/' + prod.imgFile)" @click="showModal(product)" alt="">
 					<h4>{{prod.price}} KR</h4>
 					<button class="button is-success"
         @click="addToCart()">Add to Cart</button>
@@ -30,8 +30,12 @@ export default {
 	products(){
 		return this.$store.state.products
 	},
-	
   },
+  methods:{
+	showModal(prod) {
+    this.$emit("showModal", prod);
+    },
+  }
 }
 </script>
 
@@ -55,5 +59,10 @@ export default {
 img{
 	height: 20em;
 	
+}
+button{
+ border-style: none;
+ width: 15vh;
+ height: 5vh;
 }
 </style>

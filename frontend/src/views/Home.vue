@@ -4,10 +4,14 @@
     <Header />
   </div>
   <div class="grid-products">
-  <ProductsListed />
+  <ProductsListed @showModal="showModal"/>
+  <ProductModule v-if="showProductModal"
+      @closeModal="closeModal"/>
   </div>
+
   <div class="grid-footer">
 	<Footer />
+	
   </div>
   </section>
 </template>
@@ -15,6 +19,7 @@
 <script>
 import Header from '@/components/Landing/Header.vue'
 import ProductsListed from '@/components/Landing/ProductsListed.vue'
+import ProductModule from '@/components/Landing/ProductModule.vue'
 import Footer from '@/components/Landing/Footer.vue'
 
 
@@ -25,16 +30,26 @@ export default {
   components: {
 	Header,
 	ProductsListed,
+	ProductModule,
 	Footer,
   },
   
   methods: {
-	
-	
+	showModal(data) {
+    this.product = data;
+    this.showProductModal = true;
+    },
+    closeModal() {
+    this.showProductModal = false;
+    },
   },
   computed: {
 	
   },
+  data(){return{
+	showProductModal: false,
+  }},
+
 }
 </script>
 
