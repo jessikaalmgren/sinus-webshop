@@ -23,6 +23,9 @@ export default new Vuex.Store({
 	user(state){return state.currentUser},
 	currentUser: (state) => {return state.currentUser},
 	//orders: (state)=>{return state.orders},
+	getProductId: state => id =>{
+	return state.products.find(product => product._id === id)
+	}
   },
 
 
@@ -48,7 +51,11 @@ export default new Vuex.Store({
 	},
 	updateCurrentUser(context, currentUser){
 		context.commit('currentUser', currentUser)
-	}
+	},
+	async getSingleProduct(context, payload) {
+		const response = await API.getSingleProduct(payload)
+		return response
+	},
   },
 
   mutations: {

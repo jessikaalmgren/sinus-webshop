@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Register from '../views/Register.vue'
 import MyAccount from '../views/MyAccount.vue'
+import SingleProduct from '../views/SingleProduct.vue'
+
 
 Vue.use(VueRouter)
 
@@ -21,6 +23,11 @@ const routes = [
 	path: '/myaccount',
 	name: 'MyAccount',
 	component: MyAccount
+  },
+  {
+	path: '/singleproduct/:id',
+	name: 'SingleProduct',
+	component: SingleProduct,
   },
   {
     path: '/login',

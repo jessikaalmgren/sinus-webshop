@@ -7,7 +7,7 @@
     v-bind:img="prod.imgFile" >
 					<h2>{{prod.title}}</h2>
 					<p>{{prod.shortDesc}}</p>
-					<img :src="require('@/assets/' + prod.imgFile)" @click="showModal(product)" alt="">
+					<img :src="require('@/assets/' + prod.imgFile)" @click="changeRoute(prod._id)" alt="">
 					<h4>{{prod.price}} KR</h4>
 					<button class="button is-success"
         @click="addToCart()">Add to Cart</button>
@@ -32,8 +32,8 @@ export default {
 	},
   },
   methods:{
-	showModal(prod) {
-    this.$emit("showModal", prod);
+	changeRoute(id) {
+      this.$router.push(`/singleproduct/${id}`);
     },
   }
 }

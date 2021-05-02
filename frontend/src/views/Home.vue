@@ -4,9 +4,10 @@
     <Header />
   </div>
   <div class="grid-products">
-  <ProductsListed @showModal="showModal"/>
-  <ProductModule v-if="showProductModal"
-      @closeModal="closeModal"/>
+  <ProductsListed />
+  <!-- <ProductModule @click="changeRoute(product._id)" v-for="(product, index) in product"
+          :key="index"
+          :product="product"/> -->
   </div>
 
   <div class="grid-footer">
@@ -19,7 +20,7 @@
 <script>
 import Header from '@/components/Landing/Header.vue'
 import ProductsListed from '@/components/Landing/ProductsListed.vue'
-import ProductModule from '@/components/Landing/ProductModule.vue'
+// import ProductModule from '@/components/Landing/ProductModule.vue'
 import Footer from '@/components/Landing/Footer.vue'
 
 
@@ -30,24 +31,22 @@ export default {
   components: {
 	Header,
 	ProductsListed,
-	ProductModule,
+	//ProductModule,
 	Footer,
   },
   
   methods: {
-	showModal(data) {
-    this.product = data;
-    this.showProductModal = true;
-    },
-    closeModal() {
-    this.showProductModal = false;
+	changeRoute(id) {
+      this.$router.push(`/singleproduct/${id}`);
     },
   },
   computed: {
-	
+	product(){
+		return this.$store.getters.allProducts;
+	},
   },
   data(){return{
-	showProductModal: false,
+	
   }},
 
 }

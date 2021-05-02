@@ -35,6 +35,7 @@ export default {
 	}, 
 	methods: {
 		handleLogOut(){
+			this.$router.push('/')
 			location.reload();
 		}
 	}

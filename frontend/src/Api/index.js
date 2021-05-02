@@ -47,14 +47,14 @@ export async function getProducts() {
 	}
   }
 
-//   export async function getSingleProduct(id) {
-// 	try {
-// 	  const response = await axios.get(`${PRODUCTS}${id}`)
-// 	  return response.data
-// 	} catch (error) {
-// 	  console.log(error)
-// 	}
-//   }
+  export async function getSingleProduct(id) {
+	try {
+	const response = await axios.get(`${PRODUCTS}${id}`)
+	return response.data
+	} catch (error) {
+	console.log(error)
+	}
+  }
   
 
 //  export function getProducts(){
