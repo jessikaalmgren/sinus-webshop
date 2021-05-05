@@ -40,7 +40,7 @@ export default {
 <style scoped>
 .details{
 	background-color:gray;
-	width: 32em;
+	width: auto;
 	height: 38.5em;
 	margin-top:1em;
 	padding-top: 1.5em;
@@ -48,7 +48,7 @@ export default {
 }
 .infobox{
 	background-color: white;
-	width: 19em;
+	width: auto;
 	margin: 0 auto;
 	border-style:solid;
 	margin-top: 4em;

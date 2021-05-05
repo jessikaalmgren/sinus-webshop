@@ -11,6 +11,7 @@ export default new Vuex.Store({
 	products: [],
 	currentUser: false,
 	orders: null,
+	cart: []
   },
 
   getters: {
@@ -56,6 +57,10 @@ export default new Vuex.Store({
 		const response = await API.getSingleProduct(payload)
 		return response
 	},
+	addProductToCart(context, { product, quantity }) {
+		context.commit('ADD_TO_CART', { product, quantity })
+
+	},
   },
 
   mutations: {
@@ -67,6 +72,19 @@ export default new Vuex.Store({
 	},
 	updateOrders(state, payload) {
 		state.orders = payload
+	},
+	ADD_TO_CART(state, { product, quantity }){
+		let productInCart = state.cart.find( item => {
+			return item.product.title === product.title
+		})
+		if(productInCart){
+			productInCart.quantity += quantity
+		}else{
+			state.cart.push({
+				product,
+				quantity
+			})
+		}
 	},
   },
 

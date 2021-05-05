@@ -85,7 +85,7 @@ data(){return{
 <style scoped>
 .reg-form{
 	background-color: gray;
-	width: 64em;
+	width: auto;
 	margin: 0 auto;
 	height: 39em;
 	padding-top: 4em;

@@ -35,6 +35,12 @@ export default {
 	changeRoute(id) {
       this.$router.push(`/singleproduct/${id}`);
     },
+	addToCart() {
+      this.$store.dispatch('addProductToCart', {
+		product: this.product,
+		quantity: 1 
+	})
+    },
   }
 }
 </script>

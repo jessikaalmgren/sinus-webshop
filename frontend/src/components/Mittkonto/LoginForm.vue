@@ -50,7 +50,7 @@ label {
 
 .login{
 	margin: 0 auto;
-	width: 64em;
+	width: auto;
 	height: 30em;
 	background-color: gray;
 	padding-top: 3em;

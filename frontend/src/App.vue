@@ -13,7 +13,7 @@ export default({
 	components: {
 		
 	}
-
+//https://www.youtube.com/watch?v=reV1kKzht0g
 })
 </script>
 

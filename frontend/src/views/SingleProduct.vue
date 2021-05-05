@@ -34,11 +34,17 @@ export default {
 	products(){
 		return this.$store.state.products;
 	},
+	},
 
-	components: {
-	
+	methods: {
+	addToCart() {
+      this.$store.dispatch('addProductToCart', {
+		product: this.product,
+		quantity: 1 
+	})
+    },
 },
-}}
+}
 </script>
 
 <style scoped>

@@ -19,7 +19,7 @@ computed: {
 
 <style scoped>
 .order{
-	width: 32em; 
+	width: auto; 
 	height: 40em; 
 	background-color: white;
 }
