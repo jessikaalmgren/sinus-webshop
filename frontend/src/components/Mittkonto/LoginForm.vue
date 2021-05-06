@@ -16,6 +16,8 @@
     <button class="btn btn-primary btn-block">Login</button>
   </form>
 
+  
+
 </section>
 </template>
 
@@ -43,7 +45,6 @@ export default {
 </script>
 
 <style scoped>
-
 label {
   display: block;
 }
@@ -52,7 +53,7 @@ label {
 	margin: 0 auto;
 	width: auto;
 	height: 30em;
-	background-color: gray;
+	background-color: #D9C5B4;
 	padding-top: 3em;
 }
 form{
@@ -62,18 +63,16 @@ form{
 	border-style: solid;
 	width: 20em;
 	margin: 0 auto;
-	
 }
-
 
 button{
  border-style: none;
  width: 15vh;
  height: 5vh;
+ background-color: #D9C5B4
 }
 
 .form-group{
   margin: 30px;
-  
 }
 </style>

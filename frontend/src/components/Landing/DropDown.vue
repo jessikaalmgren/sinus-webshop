@@ -17,10 +17,13 @@ export default {
 	components: {
 		MiniCart,
 	},
+
 	data() {return{
 	showDropDown: false,
-	}},
-methods: {
+	}
+	},
+
+	methods: {
 	clicked(){
 		this.showDropDown = !this.showDropDown;
 		console.log('Clicked!')
@@ -31,10 +34,10 @@ methods: {
 
 <style scoped>
 .show{
-  background: #444;
-  color: #eee;
+  background: #F2E8DF;
+  color: #261E1A;
   height: auto;
-	width: 300px;
+  width: 300px;
   transition: all 500ms ease-in-out;
   opacity: 1;
   border-radius: 5px;

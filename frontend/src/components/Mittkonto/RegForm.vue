@@ -1,8 +1,6 @@
 <template>
 <div>
 	<div class="reg-form">
-    
-
      <form @submit.prevent="handleSubmit">
     <h3>Sign Up</h3>
    
@@ -40,11 +38,8 @@
     <button class="btn btin-primary btn-block">Sign Up</button>
      </form>
   </div>
- 
 </div>
-
 </template>
-
 <script>
 import axios from 'axios'
 
@@ -58,13 +53,9 @@ data(){return{
     zip: '',
     city: '',}
   }},
-	components: {
-		
-	},
 
   methods: {
     async handleSubmit(){
-  
        await axios.post('http://localhost:5000/api/register', {
         email: this.email,
         password: this.password,
@@ -73,18 +64,15 @@ data(){return{
         street: this.address.street, 
         zip: this.address.zip,
         city: this.address.city,
-
       });  
-       
-       this.$router.push('/home')
+       this.$router.push('/')
     }
   },
 }
 </script>
-
 <style scoped>
 .reg-form{
-	background-color: gray;
+	background-color: #D9C5B4;
 	width: auto;
 	margin: 0 auto;
 	height: 39em;
@@ -109,7 +97,6 @@ button{
  width: 15vh;
  height: 5vh;
  margin: 1.8em;
+ background-color: #D9C5B4;
 }
-
-
 </style>

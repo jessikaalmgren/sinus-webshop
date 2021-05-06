@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Register from '../views/Register.vue'
 import MyAccount from '../views/MyAccount.vue'
 import SingleProduct from '../views/SingleProduct.vue'
+import CheckOut from '../views/CheckOut.vue'
 
 
 Vue.use(VueRouter)
@@ -28,6 +29,11 @@ const routes = [
 	path: '/singleproduct/:id',
 	name: 'SingleProduct',
 	component: SingleProduct,
+  },
+  {
+	path: '/checkout',
+	name: 'CheckOut',
+	component: CheckOut,
   },
   {
     path: '/login',

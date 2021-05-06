@@ -12,7 +12,7 @@
 <p>{{product.longDesc}}</p>
 <h4>Category: {{product.category}}</h4>
 <button class="button"
-        @click="addToCart()">Add to Cart</button>
+        @click="addToCart(product)">Add to Cart</button>
 </div>
 
 	</section>
@@ -20,13 +20,10 @@
 </template>
 
 <script>
-
-
 export default {
 	created() {
-    return this.$store.dispatch("getProductId");
+    return this.$store.dispatch('getProductId');
   },
-		
 	computed: {
 	product(){
 		return this.$store.getters.getProductId(this.$route.params.id)
@@ -35,13 +32,13 @@ export default {
 		return this.$store.state.products;
 	},
 	},
-
 	methods: {
-	addToCart() {
+	addToCart(product) {
       this.$store.dispatch('addProductToCart', {
-		product: this.product,
+		product,
 		quantity: 1 
 	})
+	alert('Product added to cart!')
     },
 },
 }
@@ -58,19 +55,17 @@ export default {
 }
 
 .wrapper1{
-	background-color: white; 
+	background-color: #D9C5B4; 
 	grid-column: 1/2;
 	grid-row: 1/2; 
-	
 }
 
 .wrapper2{
 	grid-column: 2/3;
 	grid-row: 1/2;
 	background-color: white;
-	padding-right: 2.5em;
+	padding: 1em;
 	padding-top: 1em;
-	
 }
 
 img{
@@ -83,12 +78,7 @@ button{
  width: 15vh;
  height: 5vh;
  margin-top: 3em;
- color: white;
- background-color: black;
+ color: black;
+ background-color: #D9C5B4;
 }
-
-
-
-
-
 </style>

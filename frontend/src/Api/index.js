@@ -55,6 +55,15 @@ export async function getProducts() {
 	console.log(error)
 	}
   }
+
+  export async function postOrders(obj) {
+	try {
+	const response = await axios.post(ORDERS, obj)
+	return response
+	} catch (error) {
+	console.log(error);
+	}
+  }
   
 
 //  export function getProducts(){

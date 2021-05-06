@@ -8,6 +8,9 @@
 <Ordrar />
 <AccDetails />
 </div>
+<div class="grid-footer">
+	<Footer />
+	</div>
 </section>
 </div>
 </template>
@@ -16,11 +19,13 @@
 import Header from '@/components/Landing/Header.vue'
 import Ordrar from '@/components/MyAccount/Ordrar.vue'
 import AccDetails from '@/components/MyAccount/AccDetails.vue'
+import Footer from '@/components/Landing/Footer.vue'
 export default {
 components: {
 	Header,
 	Ordrar,
 	AccDetails,
+	Footer,
 }
 }
 </script>
@@ -30,7 +35,6 @@ components: {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, 1fr auto);
-	grid-gap: 1em; 
 	padding: 2em 10em 10em 10em;
 }
 
@@ -42,7 +46,11 @@ components: {
 .grid-orders-details{
 	grid-row: 2/3;
 	grid-column: 1/4;
-	display: flex;
-	flex-direction: row;
+	background-color: #D9C5B4;
+}
+
+.grid-footer{
+	grid-column: 1/4;
+	grid-row: 3/4;
 }
 </style>

@@ -8,19 +8,15 @@
 
 <script>
 
-
 export default({
-	components: {
-		
-	}
-//https://www.youtube.com/watch?v=reV1kKzht0g
+
 })
 </script>
 
 
 <style lang="scss">
 body{
-	background-color: black;
+	background-color: #F2E8DF;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -39,11 +35,13 @@ body{
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #261E1A;
 	margin: 0.5em;
+	text-decoration: none;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #040D08;
+	text-decoration: none;
     }
   }
 }

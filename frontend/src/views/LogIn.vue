@@ -6,9 +6,10 @@
  <div class="grid-login">
 <LoginForm />
 </div>
-<Footer />
-    
- 
+<div class="grid-footer">
+	<Footer />
+	</div>
+
 </section>
 </template>
 
@@ -22,7 +23,6 @@ export default {
 		LoginForm,
 		Footer,
 	},
-	
 }
 </script>
 
@@ -32,7 +32,6 @@ export default {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, 1fr auto);
-	grid-gap: 1em; 
 	padding: 2em 10em 10em 10em;
 }
 
@@ -44,6 +43,11 @@ export default {
 .grid-login{
 	grid-row: 2/3;
 	grid-column: 1/4;
+}
+
+.grid-footer{
+	grid-column: 1/4;
+	grid-row: 3/4;
 }
 
 </style>

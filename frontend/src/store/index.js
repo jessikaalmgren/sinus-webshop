@@ -21,11 +21,18 @@ export default new Vuex.Store({
 	authenticated (state) {
 	return state.loginStatus && state.currentUser
 	},
-	user(state){return state.currentUser},
+	//user(state){return state.currentUser},
 	currentUser: (state) => {return state.currentUser},
-	//orders: (state)=>{return state.orders},
 	getProductId: state => id =>{
 	return state.products.find(product => product._id === id)
+	},
+	cartTotalPrice(state){
+		let total = 0
+		
+		state.cart.forEach(item =>{
+			total += item.product.price * item.quantity
+		})
+		return total
 	}
   },
 
@@ -61,6 +68,18 @@ export default new Vuex.Store({
 		context.commit('ADD_TO_CART', { product, quantity })
 
 	},
+	removeProductFromCart({commit}, product){
+		commit('REMOVE_PRODUCT_FROM_CART', product)
+	},
+	clearCartItems({commit}){
+		commit('CLEAR_CART_ITEMS')
+	},
+	async postOrders(context, payload) {
+		await API.postOrders(payload);
+	},
+	emptyCart(context) {
+		context.commit("emptyCart")
+	}
   },
 
   mutations: {
@@ -74,19 +93,28 @@ export default new Vuex.Store({
 		state.orders = payload
 	},
 	ADD_TO_CART(state, { product, quantity }){
-		let productInCart = state.cart.find( item => {
+		let productInCart = state.cart.find(item => {
 			return item.product.title === product.title
 		})
 		if(productInCart){
-			productInCart.quantity += quantity
+			productInCart.quantity += quantity;
 		}else{
-			state.cart.push({
-				product,
-				quantity
-			})
-		}
+		state.cart.push({ 
+			product,
+			quantity
+		})
+	}
+		},
+	REMOVE_PRODUCT_FROM_CART(state, product){
+		state.cart = state.cart.filter(item => {
+			return item.product.title !== product.title
+		})
 	},
-  },
+	CLEAR_CART_ITEMS(state){
+		state.cart = []
+	}
+	},
+  
 
   modules: {
 	

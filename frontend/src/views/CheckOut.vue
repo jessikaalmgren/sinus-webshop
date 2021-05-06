@@ -1,31 +1,49 @@
 <template>
-<div>
-	<section class="grid">
-		<div class="grid-header">
+<section class="grid">
+  <div class="grid-header">
 	<Header />
-	</div>
-	<div class="grid-regform">
-	<RegForm />
-	</div>
-	<div class="grid-footer">
+	<div class="grid-orderform">
+<OrderForm :getUser="getUser"/>
+</div>
+</div>
+<div class="grid-footer">
 	<Footer />
-	</div>
+  </div>
 
 </section>
-</div>
 </template>
 
 <script>
 import Header from '@/components/Landing/Header.vue'
-import RegForm from '@/components/Mittkonto/RegForm.vue'
+import OrderForm from '@/components/Mittkonto/OrderForm.vue'
 import Footer from '@/components/Landing/Footer.vue'
+
 export default {
 components: {
 	Header,
-	RegForm,
+	OrderForm,
 	Footer,
+}, 
+computed: {
+	getUser(){
+		const emptyUser = {
+			email: "",
+			name: "",
+			address: {
+				street: "",
+				zip: "",
+				city: ""
+			},
+		}
+		if(this.$store.state.currentUser){
+			return this.$store.state.currentUser
+		}else{
+			return emptyUser
+		}
+	}
 }
 }
+
 </script>
 
 <style scoped>
@@ -33,6 +51,7 @@ components: {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, 1fr auto);
+	
 	padding: 2em 10em 10em 10em;
 }
 
@@ -41,7 +60,7 @@ components: {
 	grid-row: 1/2;
 }
 
-.grid-regform{
+.grid-orderform{
 	grid-row: 2/3;
 	grid-column: 1/4;
 }

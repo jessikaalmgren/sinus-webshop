@@ -5,14 +5,9 @@
   </div>
   <div class="grid-products">
   <ProductsListed />
-  <!-- <ProductModule @click="changeRoute(product._id)" v-for="(product, index) in product"
-          :key="index"
-          :product="product"/> -->
   </div>
-
   <div class="grid-footer">
 	<Footer />
-	
   </div>
   </section>
 </template>
@@ -20,7 +15,6 @@
 <script>
 import Header from '@/components/Landing/Header.vue'
 import ProductsListed from '@/components/Landing/ProductsListed.vue'
-// import ProductModule from '@/components/Landing/ProductModule.vue'
 import Footer from '@/components/Landing/Footer.vue'
 
 
@@ -31,7 +25,6 @@ export default {
   components: {
 	Header,
 	ProductsListed,
-	//ProductModule,
 	Footer,
   },
   
@@ -57,12 +50,11 @@ export default {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, 1fr auto);
-	grid-gap: 1em; 
 	padding: 2em 10em 10em 10em;
 }
 
 .box{
-	background-color: grey;
+	background-color: #D9C5B4;
 }
 
 .grid-header{

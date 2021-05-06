@@ -1,9 +1,9 @@
 <template>
 <div>
-	
 	<div class="details" v-show="currentUser">
 		<div class="infobox">
 		<h1>Account Details</h1>
+		<h1 v-if="!currentUser">Du är inte inloggad!</h1>
 		<div class="container">
 		<p><strong>Name: </strong>{{currentUser.name}}</p>
 		</div>
@@ -38,26 +38,16 @@ export default {
 </script>
 
 <style scoped>
-.details{
-	background-color:gray;
-	width: auto;
-	height: 38.5em;
-	margin-top:1em;
-	padding-top: 1.5em;
-	
-}
 .infobox{
 	background-color: white;
 	width: auto;
 	margin: 0 auto;
 	border-style:solid;
-	margin-top: 4em;
-
-	
+	margin-top: 1em;
+	margin: 3em;
 }
 
 .container{
 	margin: 1.5em;
-	
 }
 </style>

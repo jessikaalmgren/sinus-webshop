@@ -55,7 +55,7 @@ export default {
 
 <style scoped>
 .box{
-	background-color: grey;
+	background-color: #D9C5B4;
 }
 
 .header{
@@ -77,13 +77,8 @@ margin-right: 0;
 }
 
 #nav {
-	/* display: flex;
-	justify-content: space-between; */
-	
   padding: 30px;
-
 }
-
 
 .dropdown-content {
   display: flex;
@@ -107,10 +102,7 @@ margin-right: 0;
     margin: auto;
     white-space: nowrap;
 }
-.menulinks li {
-    
+.menulinks li { 
     display: inline-block;
 }
-
-
 </style>

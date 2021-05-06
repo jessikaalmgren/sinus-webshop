@@ -1,6 +1,6 @@
 <template>
 <div class="box footer">
-		<div class="box-content">Footer</div>
+		<div class="box-content"><strong>ⓒ Sinus Webshop</strong></div>
 		</div>
 </template>
 
@@ -11,4 +11,8 @@ export default {
 </script>
 
 <style scoped>
+.box-content{
+	padding-bottom: 3em;
+	background-color: #D9C5B4;
+}
 </style>
