@@ -26,30 +26,30 @@
 import {mapGetters} from 'vuex'
 import DropDown from '@/components/Landing/DropDown.vue'
 export default {
-	components: {
-		DropDown,
+components: {
+	DropDown,
+},
+data(){return{
+	linkProducts: 'Produkter',
+	linkLogIn: 'Logga in',
+	linkRegForm: 'Registrera dig',
+	logOut: 'Logga ut',
+	myAccount: 'Mitt konto',
+	showCart: false,
+}},
+computed: {
+	...mapGetters(['currentUser'])
+}, 
+methods: {
+	handleLogOut(){
+		this.$router.push('/')
+		location.reload();
 	},
-	data(){return{
-		linkProducts: 'Produkter',
-		linkLogIn: 'Logga in',
-		linkRegForm: 'Registrera dig',
-		logOut: 'Logga ut',
-		myAccount: 'Mitt konto',
-		showCart: false,
-	}},
-	computed: {
-		...mapGetters(['currentUser'])
-	}, 
-	methods: {
-		handleLogOut(){
-			this.$router.push('/')
-			location.reload();
-		},
 		cart(){
 		console.log('Pressed!')
 		this.showCart = true;
 	},
-	},
+},
 }
 </script>
 

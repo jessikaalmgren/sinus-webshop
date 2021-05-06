@@ -38,10 +38,6 @@ export default {
 		return this.$store.getters.allProducts;
 	},
   },
-  data(){return{
-	
-  }},
-
 }
 </script>
 

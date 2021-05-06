@@ -65,8 +65,3 @@ export async function getProducts() {
 	}
   }
   
-
-//  export function getProducts(){
-// 	axios.get('http://localhost:5000/api/products/_id')
-//     .then(response => console.log(response.data))
-// }

@@ -27,13 +27,13 @@ components: {
 computed: {
 	getUser(){
 		const emptyUser = {
-			email: "",
-			name: "",
-			address: {
-				street: "",
-				zip: "",
-				city: ""
-			},
+		email: "",
+		name: "",
+		address: {
+			street: "",
+			zip: "",
+			city: ""
+		},
 		}
 		if(this.$store.state.currentUser){
 			return this.$store.state.currentUser
@@ -43,7 +43,6 @@ computed: {
 	}
 }
 }
-
 </script>
 
 <style scoped>
@@ -51,7 +50,6 @@ computed: {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, 1fr auto);
-	
 	padding: 2em 10em 10em 10em;
 }
 

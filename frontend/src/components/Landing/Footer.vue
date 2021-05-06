@@ -3,7 +3,6 @@
 		<div class="box-content"><strong>ⓒ Sinus Webshop</strong></div>
 		</div>
 </template>
-
 <script>
 export default {
 

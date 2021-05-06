@@ -14,16 +14,16 @@
 <script>
 import MiniCart from '@/components/Landing/MiniCart.vue'
 export default {
-	components: {
-		MiniCart,
-	},
+components: {
+	MiniCart,
+},
 
-	data() {return{
+data() {return{
 	showDropDown: false,
 	}
-	},
+},
 
-	methods: {
+methods: {
 	clicked(){
 		this.showDropDown = !this.showDropDown;
 		console.log('Clicked!')
@@ -61,7 +61,6 @@ export default {
   box-shadow: 0 0 10px 10px rgba(0,0,0,0);
   position: absolute;
   overflow: hidden;
-
 }
 
 button{

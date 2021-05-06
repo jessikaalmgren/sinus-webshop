@@ -16,8 +16,6 @@
     <button class="btn btn-primary btn-block">Login</button>
   </form>
 
-  
-
 </section>
 </template>
 
@@ -31,7 +29,6 @@ export default {
 
 	methods: {
 		handleLoginSubmit(){
-      
       this.$store.dispatch('logIn', {email: this.email, password: this.password})
       this.$router.push('/')
 	this.$store.dispatch('currentUser')
